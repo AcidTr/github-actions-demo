@@ -1,0 +1,15 @@
+{
+  "name": "gatest",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "lerna run dev --scope=@gatest/test --stream",
+    "build": "lerna run build --scope=@gatest/test --stream",
+    "test": "lerna run test --scope=@gatest/test --stream"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
