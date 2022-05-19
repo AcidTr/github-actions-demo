@@ -9,7 +9,7 @@
     "build": "lerna run build --scope=@gatest/test --stream",
     "test": "lerna run test --scope=@gatest/test --stream"
   },
-  "dependencies": {
+  "devDependencies": {
     "lerna": "^4.0.0"
   }
 }
