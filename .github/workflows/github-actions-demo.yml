@@ -4,7 +4,7 @@ on:
     branches: [main]
 jobs:
   build-mac:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
