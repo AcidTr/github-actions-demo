@@ -17,9 +17,6 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
-      - name: Build app for release
-        run: msbuild packages/electron -t:rebuild -verbosity:diag -property:Configuration=Release
-
       - name: install-dependencies
         run: yarn install
 
