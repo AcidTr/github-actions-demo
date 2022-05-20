@@ -63,8 +63,8 @@ jobs:
       - name: build
         run: yarn build
 
-  build-using-lerna-locally:
-    runs-on: ubuntu-latest
+  build-electron-windows:
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -74,14 +74,11 @@ jobs:
         with:
           node-version: "16.14.0"
 
-      - name: install lerna locally
-        run: npm i -g lerna
-
       - name: install-dependencies
         run: yarn install
 
-      - name: run test
-        run: yarn test
+      - name: electron rebuild
+        run: yarn rebuild --abi=93
 
       - name: build
-        run: yarn build
+        run: yarn build-electron-win
