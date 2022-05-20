@@ -3,8 +3,8 @@ on:
   push:
     branches: [main]
 jobs:
-  build-mac:
-    runs-on: macos-latest
+  build-windows:
+    runs-on: windows-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -13,6 +13,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.14.0"
+
+      - name: node gyp
+        run: npm install -g node-gyp
+
+      - name: visual studio config
+        run: npm config set msvs_version 2017
 
       - name: install-dependencies
         run: yarn install
