@@ -14,11 +14,8 @@ jobs:
         with:
           node-version: "16.14.0"
 
-      - name: node gyp
-        run: npm install -g node-gyp
-
-      - name: visual studio config
-        run: npm config set msvs_version 2017
+      - name: build tools
+        run: npm -g install windows-build-tools
 
       - name: install-dependencies
         run: yarn install
@@ -27,4 +24,4 @@ jobs:
         run: yarn rebuild --abi=93
 
       - name: electron build
-        run: yarn build-electron-mac
+        run: yarn build-electron-win
