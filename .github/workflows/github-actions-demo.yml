@@ -14,8 +14,11 @@ jobs:
         with:
           node-version: "16.14.0"
 
-      - name: install windows build tool
-        run: yarn global add windows-build-tools
+     - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Build app for release
+        run: msbuild src\YourProjectFile.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
 
       - name: install-dependencies
         run: yarn install
