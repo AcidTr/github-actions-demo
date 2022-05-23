@@ -4,7 +4,7 @@ on:
     branches: [main]
 jobs:
   build-windows:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -14,14 +14,5 @@ jobs:
         with:
           node-version: "16.14.0"
 
-      - name: build tools
-        run: npm -g install windows-build-tools
-
       - name: install-dependencies
         run: yarn install
-
-      - name: electron
-        run: yarn rebuild --abi=93
-
-      - name: electron build
-        run: yarn build-electron-win
