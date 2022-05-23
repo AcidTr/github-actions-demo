@@ -16,3 +16,9 @@ jobs:
 
       - name: install-dependencies
         run: yarn install
+
+      - name: electron
+        run: yarn rebuild --abi=93
+
+      - name: electron build
+        run: yarn build-electron-win
