@@ -4,7 +4,7 @@ on:
     branches: [main]
 jobs:
   build-windows:
-    runs-on: self-hosted
+    runs-on: macOS
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -21,4 +21,4 @@ jobs:
         run: yarn rebuild --abi=93
 
       - name: electron build
-        run: yarn build-electron-win
+        run: yarn build-electron-mac
